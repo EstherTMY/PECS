@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="cn.edu.wku.esthertang.pecs.MainActivity">
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Hello World!"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--app:layout_constraintRight_toRightOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="parent" />-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/addNewButton"
+            style="@style/ButtonStyle"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:text="新增物品"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/addNewCharacterButton"
+            style="@style/ButtonStyle"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:text="新增人物"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/addNewActionButton"
+            style="@style/ButtonStyle"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:text="新增行动"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/characterButton"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="50dp"
+            android:background="@mipmap/characters" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="人物"
+            android:layout_marginLeft="60dp"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/actionButton"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:background="@mipmap/action" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="行为"
+            android:layout_marginLeft="30dp"
+            android:textAlignment="center"
+            android:textSize="30sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/itemButton"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:background="@mipmap/items" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="物品"
+            android:layout_marginLeft="30dp"
+            android:textAlignment="center"
+            android:textSize="30sp"/>
+    </LinearLayout>
+
+
+</LinearLayout>

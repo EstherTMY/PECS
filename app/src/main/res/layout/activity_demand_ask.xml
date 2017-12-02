@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.edu.wku.esthertang.pecs.DemandAsk">
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="返回主页"
+    android:id="@+id/backButton"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:contentDescription="@string/character"
+            android:layout_marginTop="70dp"
+            android:id="@+id/character"/>
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft = "40dp"
+            android:layout_marginTop="70dp"
+            android:id="@+id/action"/>
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="70dp"
+            android:id="@+id/item"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/characterText"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/character"
+            android:text="人物"
+            android:textSize="30sp"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft = "40dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/actionText"
+            android:text="行为"
+            android:textSize="30sp"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/itemText"
+            android:text="物品"
+            android:textSize="30sp"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text=">"
+        android:textSize="60sp"
+        android:layout_marginLeft="380dp"
+        android:layout_marginTop="40dp"
+        android:clickable="false"
+        android:id="@+id/playButton"/>
+
+</LinearLayout>
