@@ -16,6 +16,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
+import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
+import com.tencent.mm.opensdk.modelmsg.WXTextObject;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.WXAPIFactory;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -35,12 +41,15 @@ public class DemandAsk extends AppCompatActivity {
     TextView actionText;
     Button playButton;
     Button backButton;
+    Button shareButton;
 
     String item;
     String character;
     String action;
 
     TTSController ttsController;
+    private static final String APP_ID = "wx0d6d2b0b99c0c11b";
+    private IWXAPI api;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +57,10 @@ public class DemandAsk extends AppCompatActivity {
         setContentView(R.layout.activity_demand_ask);
         ttsController = TTSController.getInstance(this.getApplicationContext());
         ttsController.init();
+        regToWx();
 
+
+        //Item itemObject = new Item();
 
         itemImg = (ImageView) findViewById(R.id.item);
         actionImg = (ImageView) findViewById(R.id.action);
@@ -58,6 +70,7 @@ public class DemandAsk extends AppCompatActivity {
         actionText = (TextView) findViewById(R.id.actionText);
         playButton = (Button) findViewById(R.id.playButton);
         backButton = (Button) findViewById(R.id.backButton);
+        shareButton = (Button) findViewById(R.id.shareButton);
 
         Bundle bundle = this.getIntent().getExtras();
         String category = bundle.getString("category");
@@ -128,6 +141,7 @@ public class DemandAsk extends AppCompatActivity {
 
         if(!getImagePathFromSD("item").equals("")&&!getImagePathFromSD("character").equals("")&&!getImagePathFromSD("action").equals("")){
             playButton.setClickable(true);
+            shareButton.setClickable(true);
         }
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,13 +149,38 @@ public class DemandAsk extends AppCompatActivity {
                 ttsController.playText(characterText.getText().toString()+actionText.getText().toString()+itemText.getText().toString());
             }
         });
+        shareButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        shareText(characterText.getText().toString()+actionText.getText().toString()+itemText.getText().toString());
+                    }
+                });
+
 
         //SaveImage(category,itemBitmap);
 
 
     }
+
+    private void regToWx(){
+        api = WXAPIFactory.createWXAPI(this,APP_ID,true);
+        api.registerApp(APP_ID);
+    }
+    private void shareText(String text){
+        WXTextObject textObject = new WXTextObject();
+        textObject.text = text;
+        WXMediaMessage msg = new WXMediaMessage();
+        msg.mediaObject = textObject;
+        msg.description = text;
+        SendMessageToWX.Req req = new SendMessageToWX.Req();
+
+        req.transaction = String.valueOf(System.currentTimeMillis());
+        req.message = msg;
+        req.scene = SendMessageToWX.Req.WXSceneSession;
+        api.sendReq(req);
+    }
+
     private String itemName(String fName){
-        boolean isCategory = false;
         String[] categories = fName.split("/");
         String fileName = categories[categories.length-1];
         String[] fileNames = fileName.split("-");
