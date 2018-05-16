@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mButtonSelectImage;
     private Button mButtonSelectImage1;
     private Button mButtonSelectImage2;
+    Button changeModeButton;
     // Flag to indicate which task is to be performed.
     private static final int REQUEST_SELECT_IMAGE = 0;
     // The URI of the image selected to detect.
@@ -73,8 +74,9 @@ public class MainActivity extends AppCompatActivity {
         itemButton = (ImageButton) findViewById(R.id.itemButton);
         characterButton = (ImageButton) findViewById(R.id.characterButton);
         actionButton = (ImageButton) findViewById(R.id.actionButton);
-//        gpsLocation = (TextView) findViewById(R.id.gpsLocation);
+        gpsLocation = (TextView) findViewById(R.id.gpsLocation);
         getLocationButton = (Button) findViewById(R.id.getLocation);
+        changeModeButton = (Button)findViewById(R.id.changeModeButton);
 
 
             //实例化
@@ -86,11 +88,11 @@ public class MainActivity extends AppCompatActivity {
             if (list.contains(LocationManager.GPS_PROVIDER)) {
                 //是否为GPS位置控制器
                 provider = LocationManager.GPS_PROVIDER;
-                //gpsLocation.append("GPS位置控制器" + "\n");
+                gpsLocation.append("GPS位置控制器" + "\n");
             } else if (list.contains(LocationManager.NETWORK_PROVIDER)) {
                 //是否为网络位置控制器
                 provider = LocationManager.NETWORK_PROVIDER;
-                //gpsLocation.append("网络位置控制器" + "\n");
+                gpsLocation.append("网络位置控制器" + "\n");
             } else {
                 Toast.makeText(this, "请检查网络或GPS是否打开", Toast.LENGTH_LONG).show();
                 return;
@@ -107,20 +109,37 @@ public class MainActivity extends AppCompatActivity {
                     }
                     updateWithNewLocation(location);
                     locationManager.removeUpdates(locationListener);
-//                    if (location != null) {
-//                        //获取当前位置，这里只用到了经纬度
-//                        String string = "纬度为：" + location.getLatitude() + ",经度为："
-//                                + location.getLongitude();
-//                        gpsLocation.setText(string);
-//                    }
+                    if (location != null) {
+                        //获取当前位置，这里只用到了经纬度
+                        String string = "纬度为：" + location.getLatitude() + ",经度为："
+                                + location.getLongitude();
+                        gpsLocation.setText(string);
+                    }
                 }
             });
+        changeModeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(changeModeButton.getText().equals("儿童模式")) {
+                    mButtonSelectImage.setVisibility(View.VISIBLE);
+                    mButtonSelectImage1.setVisibility(View.VISIBLE);
+                    mButtonSelectImage2.setVisibility(View.VISIBLE);
+                    changeModeButton.setText("家长模式");
+                }
+                else{
+                    mButtonSelectImage.setVisibility(View.INVISIBLE);
+                    mButtonSelectImage1.setVisibility(View.INVISIBLE);
+                    mButtonSelectImage2.setVisibility(View.INVISIBLE);
+                    changeModeButton.setText("儿童模式");
+                }
+            }
+        });
 
 
 
             TTSController ttsController = TTSController.getInstance(this.getApplicationContext());
             ttsController.init();
-            ttsController.playText("欢迎进入");
+            //ttsController.playText("欢迎进入");
             mButtonSelectImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

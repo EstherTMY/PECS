@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="物品类别"
-                android:textSize="40sp" />
+                android:textSize="70sp" />
 
             <include layout="@layout/content_category_item" />
 

@@ -16,22 +16,22 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_width="300dp"
-            android:layout_height="200dp"
+            android:layout_width="400dp"
+            android:layout_height="250dp"
             android:contentDescription="@string/character"
             android:layout_marginTop="70dp"
             android:id="@+id/character"/>
 
         <ImageView
-            android:layout_width="300dp"
-            android:layout_height="200dp"
+            android:layout_width="400dp"
+            android:layout_height="250dp"
             android:layout_marginLeft = "40dp"
             android:layout_marginTop="70dp"
             android:id="@+id/action"/>
 
         <ImageView
-            android:layout_width="300dp"
-            android:layout_height="200dp"
+            android:layout_width="400dp"
+            android:layout_height="250dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="70dp"
             android:id="@+id/item"/>
@@ -42,7 +42,7 @@
 
         <TextView
             android:id="@+id/characterText"
-            android:layout_width="300dp"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:contentDescription="@string/character"
@@ -51,7 +51,7 @@
             android:textAlignment="center"/>
 
         <TextView
-            android:layout_width="300dp"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft = "40dp"
             android:layout_marginTop="10dp"
@@ -61,7 +61,7 @@
             android:textAlignment="center"/>
 
         <TextView
-            android:layout_width="300dp"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="10dp"
@@ -84,7 +84,7 @@
         android:clickable="false"
         android:id="@+id/playButton"
         android:layout_marginTop="40dp"
-        android:layout_marginLeft="80dp"/>
+        android:layout_marginLeft="180dp"/>
         <!--android:layout_marginLeft="380dp"-->
         <!--android:layout_marginTop="40dp"-->
 
@@ -95,7 +95,7 @@
         android:text="分享"
         android:textSize="60sp"
         android:clickable="false"
-        android:layout_marginLeft="380dp"
+        android:layout_marginLeft="500dp"
         android:layout_marginTop="40dp"
         android:id="@+id/shareButton"/>
     </LinearLayout>

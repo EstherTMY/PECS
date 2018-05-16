@@ -18,34 +18,46 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
         android:orientation="vertical">
+        <Button
+            android:id="@+id/changeModeButton"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:text="儿童模式"
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/addNewButton"
             style="@style/ButtonStyle"
             android:layout_width="200dp"
             android:layout_height="100dp"
+            android:layout_marginTop="40dp"
             android:text="新增物品"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:visibility="invisible"/>
 
         <Button
             android:id="@+id/addNewCharacterButton"
             style="@style/ButtonStyle"
             android:layout_width="200dp"
             android:layout_height="100dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="100dp"
             android:text="新增人物"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:visibility="invisible"/>
 
         <Button
             android:id="@+id/addNewActionButton"
             style="@style/ButtonStyle"
             android:layout_width="200dp"
             android:layout_height="100dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="100dp"
             android:text="新增行动"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:visibility="invisible"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,19 +73,19 @@
 
         <ImageButton
             android:id="@+id/characterButton"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
             android:layout_marginLeft="60dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="180dp"
             android:background="@mipmap/characters" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="人物"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="80dp"
             android:textAlignment="center"
-            android:textSize="30sp" />
+            android:textSize="50sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -83,18 +95,18 @@
 
     <ImageButton
         android:id="@+id/actionButton"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="180dp"
         android:background="@mipmap/action" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="行为"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="50dp"
             android:textAlignment="center"
-            android:textSize="30sp"/>
+            android:textSize="50sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -108,20 +120,21 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/itemButton"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="50dp"
-        android:background="@mipmap/items" />
+        <ImageButton
+            android:id="@+id/itemButton"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="180dp"
+            android:background="@mipmap/items" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
             android:text="物品"
-            android:layout_marginLeft="30dp"
             android:textAlignment="center"
-            android:textSize="30sp"/>
+            android:textSize="50sp" />
     </LinearLayout>
 
 

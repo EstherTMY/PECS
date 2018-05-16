@@ -48,7 +48,7 @@ public class DemandAsk extends AppCompatActivity {
     String action;
 
     TTSController ttsController;
-    private static final String APP_ID = "wx0d6d2b0b99c0c11b";
+    private static final String APP_ID = "wx96b077ef1d8a52f5";
     private IWXAPI api;
 
     @Override
